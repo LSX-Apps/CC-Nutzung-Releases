@@ -1,7 +1,7 @@
 # Web-Installer fuer Claude Usage Tray
 $ErrorActionPreference = "Stop"
 
-$ManifestUrl = "https://raw.githubusercontent.com/LSX-Apps/CC-Nutzung-Releases/main/ccusage-manifest.json"
+$ManifestUrl = "https://raw.githubusercontent.com/LSX-Apps/CC-Nutzung-Releases/main/ccusage-manifest.json?t=" + [Guid]::NewGuid().ToString("N")
 Write-Host "Lade App-Informationen von GitHub..." -ForegroundColor Cyan
 
 $manifest = Invoke-RestMethod -Uri $ManifestUrl -UseBasicParsing
