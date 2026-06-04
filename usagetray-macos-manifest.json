@@ -1,6 +1,6 @@
 {
-  "version": "0.1.1",
-  "download_url": "https://github.com/LSX-Apps/CC-Nutzung-Releases/releases/download/mac-v0.1.1/UsageTray-0.1.1.zip",
-  "sha256": "36f538b846d92c1372c13460cdf6b1448f85d99096df6012098c910ce9926aaa",
+  "version": "0.1.2",
+  "download_url": "https://github.com/LSX-Apps/CC-Nutzung-Releases/releases/download/mac-v0.1.2/UsageTray-0.1.2.zip",
+  "sha256": "fc9e46f3ec6a8c7a350b4c57d9faacb1dff901e1bcd267ad00f978173d3c4a94",
   "notes": "Neue Version von AI Usage Tray (macOS)."
 }
