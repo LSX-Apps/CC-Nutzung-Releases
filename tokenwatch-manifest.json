@@ -1,6 +1,6 @@
 {
-  "version": "0.2.17",
-  "download_url": "https://github.com/LSX-Apps/TokenWatch-Releases/releases/download/win-v0.2.17/TokenWatch-0.2.17.zip",
-  "sha256": "f35d1ada241c4d86793f54aea2b74a704cc60265e470f5518969084d80add219",
-  "notes": "Claude Code wird nach der Installation dauerhaft im PATH eingetragen (kein Verschwinden nach Neustart) und auch ohne PATH zuverlaessig gefunden."
+  "version": "0.2.18",
+  "download_url": "https://github.com/LSX-Apps/TokenWatch-Releases/releases/download/win-v0.2.18/TokenWatch-0.2.18.zip",
+  "sha256": "a5492c8392ffef2697686cc911b30edddc203ea29f6861d8cda8aa600a627b07",
+  "notes": "Update-Dialog mit Spaeter-Option und neuer Schalter zum automatischen Installieren von Updates."
 }
