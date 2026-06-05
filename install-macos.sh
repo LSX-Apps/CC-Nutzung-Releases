@@ -1,19 +1,19 @@
 #!/bin/bash
-# AI Usage Tray — macOS web installer (counterpart to the Windows install.ps1).
+# TokenWatch — macOS web installer (counterpart to the Windows install.ps1).
 #
 # One-line install:
-#   curl -fsSL https://raw.githubusercontent.com/LSX-Apps/CC-Nutzung-Releases/main/install-macos.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/LSX-Apps/TokenWatch-Releases/main/install-macos.sh | bash
 #
 # Downloads the latest build, removes the Gatekeeper quarantine flag (the macOS
 # equivalent of the Windows `Unblock-File` / SAC workaround), installs to
 # /Applications, enables launch-at-login and starts the app.
 set -euo pipefail
 
-MANIFEST_URL="${MANIFEST_URL:-https://raw.githubusercontent.com/LSX-Apps/CC-Nutzung-Releases/main/usagetray-macos-manifest.json}"
-APP_NAME="UsageTray.app"
+MANIFEST_URL="${MANIFEST_URL:-https://raw.githubusercontent.com/LSX-Apps/TokenWatch-Releases/main/tokenwatch-macos-manifest.json}"
+APP_NAME="TokenWatch.app"
 DEST="/Applications/$APP_NAME"
 
-echo "AI Usage Tray — Installation"
+echo "TokenWatch — Installation"
 echo "==> Manifest laden"
 MANIFEST="$(curl -fsSL "$MANIFEST_URL")"
 
@@ -25,7 +25,7 @@ SHA="$(read_json sha256)"
 echo "    Version $VERSION"
 
 TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
-ZIP="$TMP/UsageTray.zip"
+ZIP="$TMP/TokenWatch.zip"
 
 echo "==> Herunterladen"
 curl -fsSL "$DOWNLOAD_URL" -o "$ZIP"
@@ -43,16 +43,14 @@ SRC="$(/usr/bin/find "$TMP/extract" -maxdepth 2 -name "$APP_NAME" -print -quit)"
 xattr -dr com.apple.quarantine "$SRC" 2>/dev/null || true
 
 echo "==> Installieren nach $DEST"
-osascript -e 'quit app "UsageTray"' 2>/dev/null || true
+osascript -e 'quit app "TokenWatch"' 2>/dev/null || true
 rm -rf "$DEST"
 cp -R "$SRC" "$DEST"
 xattr -dr com.apple.quarantine "$DEST" 2>/dev/null || true
-
-echo "==> Auto-Start aktivieren"
-"$DEST/Contents/MacOS/UsageTray" --enable-login || true
 
 echo "==> Starten"
 open "$DEST"
 
 echo ""
 echo "Fertig. Das Icon erscheint oben rechts in der Menüleiste."
+echo "Beim ersten Start führt dich die App durch die Einrichtung."
